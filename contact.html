@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Kentucky Car Wash</title>
+  <meta name="description" content="Contactez Kentucky Car Wash pour un devis, une réservation ou toute question. Téléphone, WhatsApp, email, formulaire." />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Kentucky<span>CarWash</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html">Galerie</a></li>
+        <li><a href="pricing.html">Tarifs</a></li>
+        <li><a href="testimonials.html">Avis</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Parlons de <span>votre véhicule</span></h1>
+      <p>Une question, un devis, une réservation ? Contactez-nous dès maintenant.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT COMPLET ===== -->
+  <section class="section-light">
+    <div class="container">
+      <div class="contact-grid">
+        <!-- Informations -->
+        <div class="contact-info">
+          <span class="section-tag">Coordonnées</span>
+          <h2 class="section-title" style="font-size:2rem;">Nos <span>coordonnées</span></h2>
+          
+          <div class="item">
+            <i data-lucide="phone"></i>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:+33123456789">+33 1 23 45 67 89</a>
+            </div>
+          </div>
+          
+          <div class="item">
+            <i data-lucide="message-circle"></i>
+            <div>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/33123456789?text=Bonjour%20Kentucky%20Car%20Wash%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank">Cliquez pour discuter</a>
+            </div>
+          </div>
+          
+          <div class="item">
+            <i data-lucide="map-pin"></i>
+            <div>
+              <strong>Adresse</strong>
+              12 Avenue des Lumières, 75001 Paris
+            </div>
+          </div>
+          
+          <div class="item">
+            <i data-lucide="mail"></i>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:contact@kentuckycarwash.fr">contact@kentuckycarwash.fr</a>
+            </div>
+          </div>
+          
+          <div class="item">
+            <i data-lucide="clock"></i>
+            <div>
+              <strong>Horaires d'ouverture</strong>
+              Lundi – Samedi : 8h – 19h<br />
+              Dimanche : Fermé
+            </div>
+          </div>
+          
+          <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9990000000003!2d2.2922926!3d48.8588443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2f5e3b5f0d%3A0x5f9e9d5b2d5e2f0d!2sTour%20Eiffel!5e0!3m2!1sfr!2sfr!4v1710000000000" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+        
+        <!-- Formulaire -->
+        <div>
+          <span class="section-tag">Écrivez-nous</span>
+          <h2 class="section-title" style="font-size:2rem;">Envoyez un <span>message</span></h2>
+          <p style="color:var(--gray-light);margin-bottom:24px;">Nous vous répondrons dans les plus brefs délais.</p>
+          
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <input type="text" placeholder="Nom complet" required />
+              <input type="email" placeholder="Email" required />
+            </div>
+            <input type="tel" placeholder="Téléphone" />
+            <textarea placeholder="Votre message..." required></textarea>
+            <button type="submit" class="btn" style="width:100%; justify-content:center;">
+              <i data-lucide="send"></i> Envoyer
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">Kentucky<span>CarWash</span></div>
+          <p style="margin: 12px 0 8px; font-style:italic;">Là où chaque véhicule retrouve son éclat.</p>
+          <p style="font-size:0.9rem;">12 Avenue des Lumières, 75001 Paris</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="facebook"></i></a>
+            <a href="#"><i data-lucide="instagram"></i></a>
+            <a href="#"><i data-lucide="twitter"></i></a>
+            <a href="#"><i data-lucide="youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Tarifs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Tél : +33 1 23 45 67 89</li>
+            <li>WhatsApp : +33 1 23 45 67 89</li>
+            <li>Email : contact@kentuckycarwash.fr</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">&copy; <span id="year"></span> Kentucky Car Wash. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/33123456789?text=Bonjour%20Kentucky%20Car%20Wash%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+  <button class="back-top" id="backTop" aria-label="Retour en haut"><i data-lucide="chevron-up"></i></button>
+
+  <script src="js/menu.js"></script>
+  <script src="js/contact.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

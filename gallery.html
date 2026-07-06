@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galerie – Kentucky Car Wash</title>
+  <meta name="description" content="Découvrez nos réalisations en images : voitures, motos, camions, avant/après." />
+  
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Kentucky<span>CarWash</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="about.html">À propos</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="gallery.html" class="active">Galerie</a></li>
+        <li><a href="pricing.html">Tarifs</a></li>
+        <li><a href="testimonials.html">Avis</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="contact.html" class="btn btn-ghost">Contact</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== PAGE HEADER ===== -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Notre <span>galerie</span></h1>
+      <p>Découvrez nos réalisations en images : voitures, motos, camions et avant/après.</p>
+    </div>
+  </section>
+
+  <!-- ===== GALERIE COMPLÈTE ===== -->
+  <section class="section-light">
+    <div class="container">
+      <div class="gallery-grid" id="galleryGrid">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Voiture propre" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1568772585410-0b6ca466aedb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Moto nettoyée" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571485694834-cbfbdb0d696d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Camion lavé" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580884223049-0b9b6b1c1b7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Équipe en action" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Avant après 1" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1568772585410-0b6ca466aedb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Finition" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571485694834-cbfbdb0d696d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Camion propre" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580884223049-0b9b6b1c1b7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Équipe professionnelle" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1607860108855-64acf2078ed9?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Avant après 2" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1568772585410-0b6ca466aedb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Moto" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1571485694834-cbfbdb0d696d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Utilitaire" loading="lazy" /></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1580884223049-0b9b6b1c1b7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Service" loading="lazy" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="close" id="lightboxClose">&times;</button>
+    <img id="lightboxImg" src="" alt="Aperçu" />
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="logo">Kentucky<span>CarWash</span></div>
+          <p style="margin: 12px 0 8px; font-style:italic;">Là où chaque véhicule retrouve son éclat.</p>
+          <p style="font-size:0.9rem;">12 Avenue des Lumières, 75001 Paris</p>
+          <div class="socials">
+            <a href="#"><i data-lucide="facebook"></i></a>
+            <a href="#"><i data-lucide="instagram"></i></a>
+            <a href="#"><i data-lucide="twitter"></i></a>
+            <a href="#"><i data-lucide="youtube"></i></a>
+          </div>
+        </div>
+        <div>
+          <h4>Liens rapides</h4>
+          <ul>
+            <li><a href="index.html">Accueil</a></li>
+            <li><a href="about.html">À propos</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="pricing.html">Tarifs</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li>Tél : +33 1 23 45 67 89</li>
+            <li>WhatsApp : +33 1 23 45 67 89</li>
+            <li>Email : contact@kentuckycarwash.fr</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copy">&copy; <span id="year"></span> Kentucky Car Wash. Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/33123456789?text=Bonjour%20Kentucky%20Car%20Wash%2C%20je%20souhaite%20prendre%20rendez-vous." target="_blank" class="whatsapp-float" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+  <button class="back-top" id="backTop" aria-label="Retour en haut"><i data-lucide="chevron-up"></i></button>
+
+  <script src="js/menu.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/animations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

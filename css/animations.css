@@ -1,0 +1,169 @@
+/* ===== ANIMATIONS ===== */
+
+/* Apparition des sections */
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation de la Hero Image */
+@keyframes heroZoom {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.08); }
+}
+
+/* Apparition avec décalage */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-content {
+  animation: fadeSlideUp 1.2s ease both;
+}
+
+.hero-image {
+  animation: fadeSlideUp 1.2s ease 0.3s both;
+}
+
+/* Zoom entrée Lightbox */
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.lightbox img {
+  animation: zoomIn 0.4s ease;
+}
+
+/* Pulse badge */
+@keyframes pulse {
+  0%, 100% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.05);
+  }
+}
+
+.pricing-card .badge {
+  animation: pulse 2s infinite;
+}
+
+/* Floating WhatsApp pulse */
+@keyframes floatPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+.whatsapp-float {
+  animation: floatPulse 3s infinite;
+}
+
+/* Fade In */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox {
+  animation: fadeIn 0.3s ease;
+}
+
+/* Transition hover pour les cartes services */
+.service-card {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+              box-shadow 0.5s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-12px) scale(1.01);
+}
+
+/* Transition hover pour les icônes */
+.why-card i,
+.service-body .icon {
+  transition: transform 0.4s ease, color 0.4s ease;
+}
+
+.why-card:hover i,
+.service-card:hover .icon {
+  transform: scale(1.2) rotate(6deg);
+}
+
+/* Transition pour les liens de navigation */
+.nav-links a::after {
+  transition: width 0.3s ease;
+}
+
+/* Transition pour les valeurs à propos */
+.about-values .value {
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.about-values .value:hover {
+  transform: translateX(6px);
+}
+
+/* Transition pour les témoignages */
+.testimonial-item {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-6px);
+}
+
+/* Transition pour les cartes tarifs */
+.pricing-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Transition pour le bouton retour en haut */
+.back-top {
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.back-top:hover {
+  transform: translateY(-4px) scale(1.08);
+}
+
+/* Animation du header au scroll */
+header {
+  transition: background 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animation de l'image hero */
+.hero-image img {
+  transition: transform 0.6s ease;
+}
+
+.hero-image img:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg) scale(1.02);
+}
