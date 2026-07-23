@@ -17,6 +17,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+section[id] { scroll-margin-top: 92px; }
 body {
   font-family: "Montserrat", Arial, sans-serif;
   color: var(--dark-color);
@@ -68,6 +69,18 @@ p { color: var(--muted); }
 .section:nth-of-type(even) p,
 .section:nth-of-type(even) .check-list { color: rgba(255,255,255,.78); }
 .section:nth-of-type(even) .eyebrow { color: #72E2F4; }
+.section-image {
+  background:
+    linear-gradient(110deg, rgba(8,32,51,.88), rgba(0,119,182,.62)),
+    url('../images/images (6).jfif') center/cover no-repeat !important;
+}
+.section-image h2, .section-image h3 { color: white; }
+.section-image p { color: rgba(255,255,255,.78); }
+.section-contact {
+  background:
+    radial-gradient(circle at 10% 15%, rgba(0,180,216,.16), transparent 28%),
+    linear-gradient(135deg, #F8FBFC 0%, #EAF7FC 100%) !important;
+}
 .section-soft {
   background:
     linear-gradient(135deg, rgba(0,119,182,.08), rgba(0,180,216,.16)),
@@ -122,6 +135,7 @@ p { color: var(--muted); }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(280px, .72fr); gap: 46px; align-items: end; }
 .hero-copy { max-width: 790px; }
 .hero-copy .kicker { color: var(--secondary-color); font-weight: 900; margin-bottom: 14px; }
+.hero-logo { width: 84px; height: 84px; object-fit: cover; border-radius: 50%; margin-bottom: 18px; box-shadow: 0 18px 42px rgba(0,0,0,.24); }
 .hero-copy .slogan { color: rgba(255,255,255,.86); font-size: 1.25rem; margin: 16px 0 12px; }
 .hero-copy p { color: rgba(255,255,255,.82); font-size: 1.08rem; max-width: 680px; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
@@ -224,6 +238,7 @@ p { color: var(--muted); }
 .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin: 28px 0; }
 .filter-btn { border: 1px solid var(--line); background: white; border-radius: var(--radius); padding: 10px 14px; cursor: pointer; font-weight: 800; color: var(--dark-color); }
 .filter-btn.active { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+.section-navy .filter-btn { border-color: rgba(255,255,255,.22); }
 
 .cta {
   overflow: hidden; position: relative; border-radius: var(--radius); padding: 44px;
@@ -240,10 +255,13 @@ p { color: var(--muted); }
 .price { font-size: 1.45rem; color: var(--primary-color); font-weight: 900; margin: 12px 0; }
 .testimonial blockquote { color: var(--dark-color); font-weight: 600; margin-bottom: 12px; }
 .testimonial small { color: var(--muted); }
-.notice { border-left: 4px solid var(--secondary-color); background: #EAF9FD; padding: 16px; border-radius: var(--radius); color: var(--dark-color); }
+.notice { border-left: 4px solid var(--secondary-color); background: #EAF9FD; padding: 16px; border-radius: var(--radius); color: var(--dark-color); margin-top: 28px; }
+.compact-grid { grid-template-columns: 1fr; }
 .faq-question { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 18px; border: 0; background: transparent; text-align: left; color: var(--dark-color); font-weight: 900; cursor: pointer; }
-.faq-answer { display: none; padding-top: 14px; }
-.faq-item.open .faq-answer { display: block; }
+.faq-question svg { flex: 0 0 auto; transition: transform var(--transition); }
+.faq-answer { max-height: 0; overflow: hidden; padding-top: 0; transition: max-height 260ms ease, padding-top 260ms ease; }
+.faq-item.open .faq-answer { max-height: 220px; padding-top: 14px; }
+.faq-item.open .faq-question svg { transform: rotate(180deg); }
 
 .contact-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 32px; align-items: start; }
 .contact-list { display: grid; gap: 16px; }
@@ -256,6 +274,8 @@ p { color: var(--muted); }
 .field input, .field textarea { border: 1px solid var(--line); border-radius: var(--radius); padding: 13px 14px; background: #FBFEFF; }
 .field textarea { min-height: 140px; resize: vertical; }
 .map-card { min-height: 230px; display: grid; place-items: center; text-align: center; padding: 28px; background: linear-gradient(135deg, #EAF9FD, #FFFFFF); border: 1px solid var(--line); border-radius: var(--radius); }
+.map-card svg { color: var(--primary-color); width: 42px; height: 42px; }
+.form-status { margin-top: 12px; }
 
 .site-footer { background: #071827; color: rgba(255,255,255,.76); padding: 54px 0 24px; }
 .footer-grid { display: grid; grid-template-columns: 1.4fr .8fr .8fr 1fr; gap: 28px; }
@@ -266,17 +286,20 @@ p { color: var(--muted); }
 .site-footer a:hover { color: var(--secondary-color); }
 .footer-bottom { border-top: 1px solid rgba(255,255,255,.1); margin-top: 32px; padding-top: 18px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: .9rem; }
 
-.whatsapp-float, .back-top {
+.whatsapp-float, .back-top, .call-float {
   position: fixed; right: 22px; z-index: 900; border-radius: 999px; display: grid; place-items: center; border: 0;
   box-shadow: 0 14px 35px rgba(8,32,51,.2); transition: var(--transition);
 }
 .whatsapp-float { bottom: 22px; width: 58px; height: 58px; color: white; background: var(--whatsapp); animation: pulse 2.5s infinite; }
 .back-top { bottom: 92px; width: 46px; height: 46px; color: white; background: var(--primary-color); opacity: 0; pointer-events: none; cursor: pointer; }
 .back-top.visible { opacity: 1; pointer-events: auto; }
+.call-float { display: none; bottom: 22px; right: 88px; width: 52px; height: 52px; color: white; background: var(--primary-color); }
 
 .lightbox { position: fixed; inset: 0; z-index: 2000; display: none; place-items: center; background: rgba(3,12,20,.88); padding: 24px; }
 .lightbox.open { display: grid; }
 .lightbox img { max-width: min(980px, 92vw); max-height: 78vh; border-radius: var(--radius); box-shadow: var(--shadow); }
+.lightbox figure { display: grid; gap: 12px; text-align: center; color: white; }
+.lightbox figcaption { color: rgba(255,255,255,.82); font-weight: 700; }
 .lightbox button { position: absolute; top: 22px; background: white; border: 0; border-radius: 999px; width: 46px; height: 46px; cursor: pointer; }
 .lightbox .close { right: 22px; }
 .lightbox .prev { left: 22px; top: 50%; }

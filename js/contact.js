@@ -1,6 +1,7 @@
-const contactForm = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
+  if (!contactForm) return;
 
-if (contactForm) {
   contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
     if (!contactForm.checkValidity()) {
@@ -10,7 +11,7 @@ if (contactForm) {
 
     const status = contactForm.querySelector(".form-status");
     if (status) {
-      status.textContent = "Ce formulaire est une maquette statique. Pour une reponse rapide, utilisez WhatsApp ou l'appel direct.";
+      status.textContent = "Votre message est valide, mais ce formulaire est statique. Pour l'envoyer réellement, utilisez WhatsApp ou l'appel direct.";
     }
   });
-}
+});
