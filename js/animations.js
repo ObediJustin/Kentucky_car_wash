@@ -20,9 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const setBackTop = () => backTop.classList.toggle("visible", window.scrollY > 500);
     setBackTop();
     window.addEventListener("scroll", setBackTop, { passive: true });
-    backTop.addEventListener("click", () => {
-      history.pushState(null, "", "#home");
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
+    if (!backTop.dataset.view) {
+      backTop.addEventListener("click", () => window.scrollTo(0, 0));
+    }
   }
 });

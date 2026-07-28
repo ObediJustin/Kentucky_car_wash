@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hors connexion | Kentucky Car Wash</title>
+  <link rel="icon" href="icons/icon-192.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #071B2F;
+      --panel: #0D1B2B;
+      --text: #F5F8FC;
+      --muted: #B8C5D5;
+      --primary: #1261A6;
+      --accent: #D59B35;
+      --whatsapp: #25D366;
+    }
+    * { box-sizing: border-box; }
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      font-family: Montserrat, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 18%, rgba(45,156,219,.22), transparent 28%),
+        linear-gradient(135deg, #030A12, var(--bg));
+    }
+    main {
+      width: min(100%, 620px);
+      padding: 34px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 18px;
+      background: rgba(13,27,43,.92);
+      box-shadow: 0 28px 80px rgba(0,0,0,.35);
+      text-align: center;
+    }
+    img { width: min(260px, 80%); height: auto; object-fit: contain; margin: 0 auto 22px; }
+    h1 { margin: 0 0 12px; font-size: clamp(2rem, 8vw, 3rem); }
+    p { color: var(--muted); line-height: 1.7; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 24px; }
+    a, button {
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      color: white;
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    button { background: linear-gradient(135deg, var(--primary), #2D9CDB); }
+    .call { background: transparent; }
+    .whatsapp { background: var(--whatsapp); border-color: transparent; }
+  </style>
+</head>
+<body>
+  <main>
+    <img src="images/Logo Minimaliste Professionnel Marron Beige.png" alt="Logo Kentucky Car Wash">
+    <h1>Vous êtes hors connexion.</h1>
+    <p>Certaines informations restent disponibles, mais une connexion Internet est nécessaire pour actualiser le site.</p>
+    <p>Vous pouvez toujours nous appeler ou nous écrire sur WhatsApp.</p>
+    <div class="actions">
+      <button type="button" onclick="window.location.reload()">Réessayer</button>
+      <a class="call" href="tel:+243892821544">+243 892 821 544</a>
+      <a class="whatsapp" href="https://wa.me/243892821544">WhatsApp</a>
+    </div>
+  </main>
+</body>
+</html>

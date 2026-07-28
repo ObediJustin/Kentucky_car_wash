@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,25 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kentucky-car-wash.netlify.app">
   <meta property="og:image" content="images/images.jfif">
+  <script>
+    (() => {
+      try {
+        const savedTheme = localStorage.getItem("kentucky-theme");
+        const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        document.documentElement.dataset.theme = savedTheme === "light" || savedTheme === "dark" ? savedTheme : systemTheme;
+      } catch (error) {
+        document.documentElement.dataset.theme = "light";
+      }
+    })();
+  </script>
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1261A6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Kentucky Car Wash">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,61 +37,85 @@
   <link rel="stylesheet" href="css/responsive.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<body style="--hero-image:url('images/images.jfif')">
+<body style="--hero-image:url('images/images (4).jfif')">
   <header class="site-header">
+    <div class="top-bar">
+      <div class="container top-bar-inner">
+        <div class="top-meta">
+          <span><i data-lucide="map-pin"></i> Route Aéroport, Kihisi, à côté de African Oil</span>
+          <b aria-hidden="true"></b>
+          <span><i data-lucide="phone"></i> +243 892 821 544</span>
+          <b aria-hidden="true"></b>
+          <span><i data-lucide="mail"></i> kentucky-car-wash@outlook.fr</span>
+        </div>
+        <div class="social-links" aria-label="Réseaux sociaux">
+          <a href="#" aria-label="Réseau social"><i data-lucide="share-2"></i></a>
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a>
+          <a href="https://wa.me/243892821544" target="_blank" rel="noopener" aria-label="WhatsApp"><i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+    </div>
     <div class="container nav-inner">
-      <a class="brand" href="#home" aria-label="Accueil Kentucky Car Wash">
+      <a class="brand" href="#home" data-view="home" aria-label="Accueil Kentucky Car Wash">
         <img src="images/Logo Minimaliste Professionnel Marron Beige.png" alt="Logo Kentucky Car Wash">
-        <strong>Kentucky <span>Car Wash</span></strong>
       </a>
       <nav aria-label="Navigation principale">
         <ul class="nav-links">
-          <li><a class="active" href="#home">Accueil</a></li>
-          <li><a href="#about">À propos</a></li>
-          <li><a href="#why-us">Pourquoi nous choisir</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Galerie</a></li>
-          <li><a href="#pricing">Tarifs</a></li>
-          <li><a href="#testimonials">Avis</a></li>
-          <li><a href="#faq">FAQ</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a class="active" href="#home" data-view="home">Accueil</a></li>
+          <li><a href="#about" data-view="about">À propos</a></li>
+          <li><a href="#why-us" data-view="why-us">Pourquoi nous choisir</a></li>
+          <li><a href="#services" data-view="services">Services</a></li>
+          <li><a href="#gallery" data-view="gallery">Galerie</a></li>
+          <li><a href="#pricing" data-view="pricing">Tarifs</a></li>
+          <li><a href="#testimonials" data-view="testimonials">Avis</a></li>
+          <li><a href="#faq" data-view="faq">FAQ</a></li>
+          <li><a href="#contact" data-view="contact">Contact</a></li>
         </ul>
       </nav>
       <div class="nav-actions">
-        <a class="btn btn-small" href="tel:+243892821544"><i data-lucide="phone"></i> Appeler</a>
+        <button type="button" class="theme-toggle" id="themeToggle" aria-label="Activer le thème sombre" title="Changer de thème">
+          <i data-lucide="moon" class="theme-toggle__icon"></i>
+        </button>
+        <a class="btn nav-call" href="tel:+243892821544"><i data-lucide="phone-call"></i><span>Appelez-nous<small>+243 892 821 544</small></span></a>
         <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false"><i data-lucide="menu"></i></button>
       </div>
     </div>
   </header>
-
   <main>
-    <section class="hero" id="home">
-      <div class="container hero-grid">
+    <section class="page-view home-view active" id="home">
+      <div class="home-hero">
+        <div class="home-hero__overlay" aria-hidden="true"></div>
+        <div class="container home-hero__content">
         <div class="hero-copy">
           <img class="hero-logo" src="images/Logo Minimaliste Professionnel Marron Beige.png" alt="Logo Kentucky Car Wash">
-          <div class="kicker">Kentucky Car Wash</div>
-          <h1>Redonnez à votre véhicule l'éclat qu'il mérite.</h1>
-          <p class="slogan">Là où chaque véhicule retrouve son éclat.</p>
+          <div class="kicker">Le soin professionnel de votre véhicule</div>
+          <h1>Redonnez à<br>votre véhicule<br><span>l'éclat qu'il mérite.</span></h1>
           <p>Chez Kentucky Car Wash, chaque détail compte. Nous prenons soin de votre voiture, votre moto ou votre camion avec précision, rapidité et professionnalisme.</p>
+          <div class="hero-benefits">
+            <span><i data-lucide="sparkles"></i><span><strong>Résultat impeccable</strong><small>Finition soignée</small></span></span>
+            <span><i data-lucide="shield-check"></i><span><strong>Produits de qualité</strong><small>Respect de votre véhicule</small></span></span>
+            <span><i data-lucide="clock"></i><span><strong>Service rapide</strong><small>Sans compromis</small></span></span>
+          </div>
           <div class="hero-actions">
-            <a class="btn btn-secondary" target="_blank" rel="noopener" href="https://wa.me/243892821544?text=Bonjour%20Kentucky%20Car%20Wash%2C%20je%20souhaite%20obtenir%20plus%20d%E2%80%99informations%20sur%20vos%20services%20de%20lavage."><i data-lucide="message-circle"></i> WhatsApp</a>
-            <a class="btn btn-outline" href="tel:+243892821544"><i data-lucide="phone"></i> Appeler</a>
-            <a class="btn btn-light" href="#services"><i data-lucide="sparkles"></i> Nos services</a>
+            <a class="btn btn-secondary btn-stacked" target="_blank" rel="noopener" href="https://wa.me/243892821544?text=Bonjour%20Kentucky%20Car%20Wash%2C%20je%20souhaite%20obtenir%20plus%20d%27informations%20sur%20vos%20services%20de%20lavage."><i data-lucide="message-circle"></i><span>Écrire sur WhatsApp<small>+243 892 821 544</small></span></a>
+            <a class="btn btn-outline btn-stacked" href="tel:+243892821544"><i data-lucide="phone"></i><span>Nous appeler<small>+243 892 821 544</small></span></a>
+            <a class="btn btn-light" href="#services" data-view="services"><i data-lucide="arrow-right"></i> Découvrir nos services</a>
           </div>
         </div>
-        <aside class="hero-panel" aria-label="Coordonnées rapides">
-          <strong>Route Aéroport, Kihisi</strong>
-          <p>À côté de African Oil. Passez, appelez ou écrivez-nous pour trouver le service adapté à votre véhicule.</p>
-          <div class="mini-list">
-            <span><i data-lucide="phone"></i> +243 892 821 544</span>
-            <span><i data-lucide="mail"></i> kentucky-car-wash@outlook.fr</span>
-            <span><i data-lucide="globe"></i> kentucky-car-wash.netlify.app</span>
+        </div>
+
+        <div class="hero-services" aria-label="Services principaux">
+          <div class="container hero-services-card">
+            <article><i data-lucide="car"></i><div><h3>Lavage voiture</h3><p>Extérieur et intérieur</p></div></article>
+            <article><i data-lucide="bike"></i><div><h3>Lavage moto</h3><p>Soin complet</p></div></article>
+            <article><i data-lucide="truck"></i><div><h3>Lavage camion</h3><p>Propreté professionnelle</p></div></article>
+            <article><i data-lucide="badge-check"></i><div><h3>Service fiable</h3><p>À votre convenance</p></div></article>
           </div>
-        </aside>
+        </div>
       </div>
     </section>
 
-    <section class="section" id="about">
+    <section class="section page-view" id="about">
       <div class="container split">
         <div class="media-stack">
           <img src="images/images (1).jfif" alt="Lavage haute pression d'une voiture blanche" loading="lazy">
@@ -91,7 +134,7 @@
       </div>
     </section>
 
-    <section class="section section-image" id="why-us">
+    <section class="section section-image page-view" id="why-us">
       <div class="container">
         <span class="eyebrow">Pourquoi nous choisir</span>
         <h2>Une expérience simple, propre et rassurante.</h2>
@@ -103,7 +146,7 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="services">
+    <section class="section section-soft page-view" id="services">
       <div class="container">
         <span class="eyebrow">Services</span>
         <h2>Un soin adapté à chaque véhicule.</h2>
@@ -115,7 +158,7 @@
       </div>
     </section>
 
-    <section class="section section-navy" id="gallery">
+    <section class="section section-navy page-view" id="gallery">
       <div class="container">
         <span class="eyebrow">Galerie</span>
         <h2>Découvrez la différence Kentucky Car Wash.</h2>
@@ -138,7 +181,7 @@
       </div>
     </section>
 
-    <section class="section" id="pricing">
+    <section class="section page-view" id="pricing">
       <div class="container">
         <span class="eyebrow">Tarifs</span>
         <h2>Des services adaptés à vos besoins.</h2>
@@ -151,7 +194,7 @@
       </div>
     </section>
 
-    <section class="section section-soft" id="testimonials">
+    <section class="section section-soft page-view" id="testimonials">
       <div class="container split">
         <div>
           <span class="eyebrow">Témoignages</span>
@@ -167,7 +210,7 @@
       </div>
     </section>
 
-    <section class="section" id="faq">
+    <section class="section page-view" id="faq">
       <div class="container">
         <span class="eyebrow">FAQ</span>
         <h2>Les réponses utiles avant de nous contacter.</h2>
@@ -182,7 +225,7 @@
       </div>
     </section>
 
-    <section class="section section-contact" id="contact">
+    <section class="section section-contact page-view" id="contact">
       <div class="container contact-layout">
         <div class="contact-list">
           <span class="eyebrow">Contact</span>
@@ -209,7 +252,7 @@
       </div>
     </section>
 
-    <section class="section">
+    <section class="section page-view">
       <div class="container">
         <div class="cta">
           <div><h2>Confiez-nous votre véhicule, nous nous occupons du reste.</h2><p>Appelez Kentucky Car Wash ou envoyez un message WhatsApp pour obtenir les informations utiles avant votre passage.</p></div>
@@ -228,17 +271,17 @@
 
   <footer class="site-footer" id="footer">
     <div class="container footer-grid">
-      <div><a class="brand" href="#home"><img src="images/Logo Minimaliste Professionnel Marron Beige.png" alt="Logo Kentucky Car Wash"><strong>Kentucky <span>Car Wash</span></strong></a><p>Là où chaque véhicule retrouve son éclat.</p></div>
-      <div><h3>Liens rapides</h3><ul><li><a href="#about">À propos</a></li><li><a href="#services">Services</a></li><li><a href="#gallery">Galerie</a></li><li><a href="#pricing">Tarifs</a></li></ul></div>
+      <div><a class="brand" href="#home" data-view="home"><img src="images/Logo Minimaliste Professionnel Marron Beige.png" alt="Logo Kentucky Car Wash"><strong>Kentucky <span>Car Wash</span></strong></a><p>Là où chaque véhicule retrouve son éclat.</p></div>
+      <div><h3>Liens rapides</h3><ul><li><a href="#about" data-view="about">À propos</a></li><li><a href="#services" data-view="services">Services</a></li><li><a href="#gallery" data-view="gallery">Galerie</a></li><li><a href="#pricing" data-view="pricing">Tarifs</a></li></ul></div>
       <div><h3>Services</h3><ul><li>Lavage automobile</li><li>Lavage moto</li><li>Lavage camion</li><li>Intérieur et extérieur</li></ul></div>
-      <div><h3>Contact</h3><ul><li>Route Aéroport, Kihisi, à côté de African Oil</li><li><a href="tel:+243892821544">+243 892 821 544</a></li><li><a href="mailto:kentucky-car-wash@outlook.fr">kentucky-car-wash@outlook.fr</a></li></ul></div>
+      <div><h3>Contact</h3><ul><li>Route Aéroport, Kihisi, à côté de African Oil</li><li><a href="tel:+243892821544">+243 892 821 544</a></li><li><a href="mailto:kentucky-car-wash@outlook.fr">kentucky-car-wash@outlook.fr</a></li></ul><button class="btn btn-small install-app" type="button" data-install-app hidden><i data-lucide="download"></i> Installer l'application</button></div>
     </div>
     <div class="container footer-bottom"><span>&copy; <span data-year></span> Kentucky Car Wash.</span><span>kentucky-car-wash.netlify.app</span></div>
   </footer>
 
   <a class="whatsapp-float" target="_blank" rel="noopener" aria-label="Écrire à Kentucky Car Wash sur WhatsApp" href="https://wa.me/243892821544?text=Bonjour%20Kentucky%20Car%20Wash%2C%20je%20souhaite%20obtenir%20plus%20d%E2%80%99informations%20sur%20vos%20services%20de%20lavage."><i data-lucide="message-circle"></i></a>
   <a class="call-float" href="tel:+243892821544" aria-label="Appeler Kentucky Car Wash"><i data-lucide="phone"></i></a>
-  <button class="back-top" id="backTop" aria-label="Retour en haut"><i data-lucide="chevron-up"></i></button>
+  <button class="back-top" id="backTop" data-view="home" aria-label="Retour en haut"><i data-lucide="chevron-up"></i></button>
 
   <script src="js/menu.js"></script>
   <script src="js/gallery.js"></script>

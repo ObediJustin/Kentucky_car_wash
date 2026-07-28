@@ -31,7 +31,6 @@ section {
   animation: softRise .7s ease both;
 }
 
-.hero::before,
 .page-hero::before,
 .cta::before {
   content: "";
