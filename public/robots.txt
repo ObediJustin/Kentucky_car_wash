@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://kentucky-car-wash.netlify.app/robots.txt
